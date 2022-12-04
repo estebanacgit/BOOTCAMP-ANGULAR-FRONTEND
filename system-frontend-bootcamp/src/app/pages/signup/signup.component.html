@@ -13,38 +13,38 @@
 
            <mat-form-field class="full-width" appearance="outline">
              <mat-label>Nombre de Usuario</mat-label>
-             <input [(ngModel)] = "user.username" name = "username" matInput placeholder="Digite su nombre de usuario">
+             <input required [(ngModel)] = "user.username" name = "username" matInput placeholder="Digite su nombre de usuario">
            </mat-form-field>
 
 
            <mat-form-field class="full-width" appearance="outline">
              <mat-label>Contraseña</mat-label>
-             <input [(ngModel)] = "user.password" name = "password" type="password" matInput placeholder="Digite su contraseña">
+             <input required [(ngModel)] = "user.password" name = "password" type="password" matInput placeholder="Digite su contraseña">
            </mat-form-field>
 
            <mat-form-field class="full-width" appearance="outline">
              <mat-label>Nombre</mat-label>
-             <input [(ngModel)] = "user.name" name = "name" matInput placeholder="Digite su nombre">
+             <input required [(ngModel)] = "user.name" name = "name" matInput placeholder="Digite su nombre">
            </mat-form-field>
 
            <mat-form-field class="full-width" appearance="outline">
              <mat-label>Apellido</mat-label>
-             <input [(ngModel)] = "user.surname" name = "surname" matInput placeholder="Digite su apellido">
+             <input required [(ngModel)] = "user.surname" name = "surname" matInput placeholder="Digite su apellido">
            </mat-form-field>
 
            <mat-form-field class="full-width" appearance="outline">
              <mat-label>Email</mat-label>
-             <input [(ngModel)] = "user.email" name = "email" type="email" matInput placeholder="Digite su Email">
+             <input required [(ngModel)] = "user.email" name = "email" type="email" matInput placeholder="Digite su Email">
            </mat-form-field>
 
            <mat-form-field class="full-width" appearance="outline">
              <mat-label>Telefono</mat-label>
-             <input [(ngModel)] = "user.numberphone" name = "numberphone" matInput placeholder="Digite su Telefono">
+             <input required [(ngModel)] = "user.numberphone" name = "numberphone" matInput placeholder="Digite su Telefono">
            </mat-form-field>
 
            <div class="container text-center">
              <button class="btn btn-primary">Registrar</button>
-             <button style = "margin-left: 20px;" class="btn btn-danger">Limpiar</button>
+             <button type="reset" style = "margin-left: 20px;" class="btn btn-danger">Limpiar</button>
            </div>
          </form>
          <br><br><br>
