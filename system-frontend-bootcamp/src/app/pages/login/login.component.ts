@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,11 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
 
   loginData = {
-    "username" : "",
-    "password": ""
+    "username" : '',
+    "password": ''
   }
 
-  constructor(private matSnackBar:MatSnackBar, private loginService:LoginService) { }
+  constructor(private matSnackBar:MatSnackBar, private loginService:LoginService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -39,14 +40,40 @@ export class LoginComponent implements OnInit {
         }
 
         this.loginService.generateToken(this.loginData).subscribe(
-          (data:any) => {
+
+            (data:any) => {
             console.log(data);
             this.loginService.loginUser(data.token);
+
             this.loginService.getCurrentUser().subscribe((user:any) => {
+
+              this.loginService.setUsername(user);
               console.log(user);
+
+              if(this.loginService.getUsernameRole() == "ADMIN") {
+
+                //window.location.href = '/admin';
+                this.router.navigate(['admin']);
+                this.loginService.loginStatusSubjet.next(true);
+
+              } else if (this.loginService.getUsernameRole() == "USUARIO") {
+
+                //window.location.href = '/user-dashboard'
+                this.router.navigate(['user-dashboard']);
+                this.loginService.loginStatusSubjet.next(true);
+
+              } else {
+
+                this.loginService.logoutUser();
+
+              }
+
             })
           },(error) => {
             console.log(error);
+            this.matSnackBar.open('Detalles invalidos, volve a intentarlo',  'Aceptar', {
+              duration : 3000
+            });
           }
         )
 

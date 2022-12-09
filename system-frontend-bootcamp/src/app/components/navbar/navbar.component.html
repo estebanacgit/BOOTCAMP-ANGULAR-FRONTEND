@@ -1,22 +1,54 @@
 <mat-toolbar color="primary">
-  <a [routerLink]="'/'"
+  <a
+      [routerLink]="'/'"
       mat-icon-button
-      class = "example-icon" arial-label="Example icon-button with menu icon">
+      class = "example-icon"
+      arial-label="Example icon-button with menu icon">
+
       <mat-icon>menu_books</mat-icon>
   </a>
 
   <span>Portal</span>
   <span class="example-spacer"></span>
-  <a [routerLink] = "'/login'" mat-icon-button
+
+  <!-- cuando no esta iniciada la session -->
+
+  <a
+      *ngIf="!loginNavbar.isLoggedIn()"
+      [routerLink] = "'/login'"
+      mat-icon-button
       class = "example-icon favorite-icon mr20"
       arial-label="Example icon-button with hearth icon">
     Iniciar Session
   </a>
 
-  <a [routerLink] = "'/signup'" mat-icon-button
+  <a
+      *ngIf="!loginNavbar.isLoggedIn()"
+      [routerLink] = "'/signup'"
+      mat-icon-button
       class = "example-icon favorite-icon mr50 ml70"
       arial-label="Example icon-button with hearth icon">
     Registrarse
+  </a>
+
+  <!-- cuando esta iniciada la session -->
+
+  <button
+     *ngIf="loginNavbar.isLoggedIn() && user"
+      mat-button
+      mat-icon-button
+      class = "example-icon favorite-icon mr20"
+      arial-label="Example icon-button with hearth icon">
+      {{ user.username }}
+  </button>
+
+  <a
+      *ngIf="loginNavbar.isLoggedIn()"
+      (click) = "logoutNavbar()"
+      mat-icon-button
+      class = "example-icon favorite-icon mr50 ml70"
+      arial-label="Example icon-button with hearth icon">
+    Cerrar Session
   </a>
 
 </mat-toolbar>
