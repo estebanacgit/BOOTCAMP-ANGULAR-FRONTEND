@@ -1,0 +1,126 @@
+<div class = "bootstrap-wrapper">
+  <div class = "container">
+    <div class = "row" style="margin-top : 20px;">
+
+
+
+        <h1 class="text-center">Cotizar</h1>
+
+        <!-- Atributos del Cliente -->
+
+        <form (ngSubmit) = "formSubmit()" class="table-primary" action="">
+          <mat-list>
+          <table class="example-full-width" cellspacing="0">
+          <mat-list-item>Datos Cliente</mat-list-item>
+
+              <!-- Nombre del Cliente -->
+              <tr><td><mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input name = "nameAssess" matInput placeholder="Escriba el nombre del cliente" [(ngModel)]="assessComponent.assessName" [ngModelOptions]="{standalone: true}">
+              </mat-form-field></td>
+
+
+              <!-- Apellido del Cliente -->
+              <td><mat-form-field class="" appearance="outline">
+                <mat-label>Apellido</mat-label>
+                <input name = "assessSurname" matInput placeholder="Escriba el apellido del cliente" [(ngModel)]="assessComponent.assessSurname" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              </td></tr>
+
+              <!-- Telefono del Cliente -->
+              <tr><td><mat-form-field class="" appearance="outline">
+                <mat-label>Telefono</mat-label>
+                <input name = "assessPhoneNumber" matInput placeholder="Escriba el telefono del cliente" [(ngModel)]="assessComponent.assessPhoneNumber" [ngModelOptions]="{standalone: true}">
+              </mat-form-field></td>
+
+
+              <!-- Email del Cliente -->
+              <td><mat-form-field class="" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input name = "assessEmail" matInput placeholder="Escriba el email del cliente" [(ngModel)]="assessComponent.assessEmail" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              </td></tr>
+
+              <!-- Domicilio del Cliente -->
+              <tr><td><mat-form-field class="" appearance="outline">
+                <mat-label>Localidad</mat-label>
+                <input name = "assessLocation" matInput placeholder="Escriba la localidad del cliente" [(ngModel)]="assessComponent.assessLocation" [ngModelOptions]="{standalone: true}">
+              </mat-form-field></td>
+
+
+              <!-- Domicilio del Cliente -->
+              <td><mat-form-field class="" appearance="outline">
+                <mat-label>Domicilio</mat-label>
+                <input name = "assessAddress" matInput placeholder="Escriba la direccion del cliente" [(ngModel)]="assessComponent.assessAddress" [ngModelOptions]="{standalone: true}">
+              </mat-form-field></td></tr>
+
+
+              <!-- Como nos conocio del Cliente -->
+              <tr><td><mat-form-field class="" appearance="outline">
+                <mat-label>Como nos conocio</mat-label>
+                <input name = "assessRecomendation" matInput placeholder="Escriba como nos conocio" [(ngModel)]="assessComponent.assessRecomendation" [ngModelOptions]="{standalone: true}">
+              </mat-form-field></td>
+
+
+              <!-- Vendedor del Cliente -->
+              <td><mat-form-field class="" appearance="outline">
+                <mat-label>Vendedor</mat-label>
+                <input name = "assessSeller" matInput placeholder="Escriba el nombre del vendedor" [(ngModel)]="assessComponent.assessSeller" [ngModelOptions]="{standalone: true}">
+              </mat-form-field></td></tr>
+
+            <mat-divider></mat-divider>
+            <mat-list-item>Cotizar TRANSPORTE</mat-list-item>
+
+            <!-- Fecha -->
+            <tr><td><mat-form-field class="" appearance="outline">
+              <mat-label>Fecha</mat-label>
+              <input name = "assessDate" matInput placeholder="Escriba la fecha actual" [(ngModel)]="assessComponent.assessDate" [ngModelOptions]="{standalone: true}">
+            </mat-form-field></td>
+
+
+            <!-- Vehiculo -->
+            <td><mat-form-field class="" appearance="outline">
+              <mat-label>Vehiculo</mat-label>
+              <input name = "assessVehicle" matInput placeholder="Escriba el Vehiculo a usar" [(ngModel)]="assessComponent.assessVehicle" [ngModelOptions]="{standalone: true}">
+            </mat-form-field></td></tr>
+
+
+            <!-- KM -->
+            <tr><td><mat-form-field class="" appearance="outline">
+              <mat-label>KM a recorrer</mat-label>
+              <input type="number" name = "assessKm" matInput placeholder="Escriba los KM a recorrer" [(ngModel)]="assessComponent.assessKm" [ngModelOptions]="{standalone: true}">
+            </mat-form-field></td>
+
+
+            <!-- KG -->
+            <td><mat-form-field class="" appearance="outline">
+              <mat-label>KG del paquete</mat-label>
+              <input type="number" name = "assessKg" matInput placeholder="Escriba los KG del paqueter" [(ngModel)]="assessComponent.assessKg" [ngModelOptions]="{standalone: true}">
+            </mat-form-field></td>
+
+
+            <!-- Tamaño
+            <td><mat-form-field class="" appearance="outline">
+              <mat-label>Tamaño del producto</mat-label>
+              <input required name = "nameAssess" matInput placeholder="Escriba el Tamaño del producto">
+            </mat-form-field></td> --></tr>
+
+              <p>
+                <mat-form-field class="full-width">
+                  <mat-label>Comentario</mat-label>
+                  <textarea matInput placeholder="Comentario extra sobre esta cotizacion" [(ngModel)]="assessComponent.assessComment" [ngModelOptions]="{standalone: true}"></textarea>
+                </mat-form-field>
+              </p>
+
+              <div class="container text-center">
+                <button class="btn btn-primary">Generar Cotizacion</button>
+                <button type="reset" style = "margin-left: 20px;" class="btn btn-danger">Limpiar</button>
+              </div>
+
+          </table>
+          </mat-list>
+        </form>
+
+    </div>
+  </div>
+</div>

@@ -34,12 +34,12 @@ const routes: Routes = [
   canActivate: [AdminGuard],
   children: [ //<-- declaro el componente hijo
     {
-      path:'profile',
-      component: ProfileComponent
-    },
-    {
       path:'',
       component: WelcomeComponent
+    },
+    {
+      path:'profile',
+      component: ProfileComponent
     },
     {
       path:'assess',

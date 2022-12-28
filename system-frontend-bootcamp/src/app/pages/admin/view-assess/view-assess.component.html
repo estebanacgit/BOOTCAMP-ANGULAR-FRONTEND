@@ -1,0 +1,71 @@
+<!--
+<mat-card>
+  <mat-list>
+    <div mat-subheader>
+      Todos las cotizaciones
+    </div>
+    <mat-list-item *ngFor = "let assess of viewAssessComponent">
+      <div mat-line>{{ assess.assessId }}</div>
+      <div mat-line>{{ assess.assessName }}</div>
+      <div mat-line>{{ assess.assessSurname }}</div>
+      <div mat-line>{{ assess.assessPhoneNumber }}</div>
+      <div mat-line>{{ assess.assessEmail }}</div>
+      <div mat-line>{{ assess.assessLocation }}</div>
+      <div mat-line>{{ assess.assessAddress }}</div>
+      <div mat-line>{{ assess.assessRecomendation }}</div>
+      <div mat-line>{{ assess.assessSeller }}</div>
+      <div mat-line>{{ assess.assessDate }}</div>
+      <div mat-line>{{ assess.assessVehicle }}</div>
+      <div mat-line>{{ assess.assessKm }}</div>
+      <div mat-line>{{ assess.assessKg }}</div>
+      <div mat-line>{{ assess.assessComment }}</div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+
+  <div class = "container text-center mt20">
+    <button mat-raised-button color="primary">Agregar Cotizacion</button>
+  </div>
+
+</mat-card>
+-->
+<br>
+<table class="table table-dark table-striped-columns">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Email</th>
+      <th scope="col">Localidad</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Recomendacion</th>
+      <th scope="col">Vendedor</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Vehiculo</th>
+      <th scope="col">KM</th>
+      <th scope="col">KG</th>
+      <th scope="col">Comentario</th>
+    </tr>
+  </thead>
+  <tbody  *ngFor = "let assess of viewAssessComponent">
+    <tr>
+      <th scope="row">{{ assess.assessId }}</th>
+      <td>{{ assess.assessName }}</td>
+      <td>{{ assess.assessSurname }}</td>
+      <td>{{ assess.assessPhoneNumber }}</td>
+      <td>{{ assess.assessEmail }}</td>
+      <td>{{ assess.assessLocation }}</td>
+      <td>{{ assess.assessAddress }}</td>
+      <td>{{ assess.assessRecomendation }}</td>
+      <td>{{ assess.assessSeller }}</td>
+      <td>{{ assess.assessDate }}</td>
+      <td>{{ assess.assessVehicle }}</td>
+      <td>{{ assess.assessKm }}</td>
+      <td>{{ assess.assessKg }}</td>
+      <td>{{ assess.assessComment }}</td>
+    </tr>
+  </tbody>
+</table>
